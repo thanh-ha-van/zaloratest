@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="main_input_title">What on your mind?</string>
+    <string name="main_output_title">What on my mind:</string>
+    <string name="main_button_process">See result</string>
+    <string name="main_button_clear">Clear</string>
+</resources>
