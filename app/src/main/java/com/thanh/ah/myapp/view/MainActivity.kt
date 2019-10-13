@@ -25,13 +25,25 @@ class MainActivity : AppCompatActivity(), MainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mPresenter = MainPresenterImpl(this)
+    }
+
+    override fun onStart() {
+        initUI()
+        super.onStart()
+    }
+
+    private fun initUI() {
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvMess.layoutManager = layoutManager
         adapter = MyAdapter()
         rvMess.adapter = adapter
+        buttonGo.setOnClickListener {
+            mPresenter.processInput(etInput.text.toString())
+        }
     }
 
     override fun onShowList(list: List<String>) {
+        adapter.clear()
         adapter.addItems(list)
     }
 }

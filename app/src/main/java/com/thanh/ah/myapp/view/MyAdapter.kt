@@ -26,9 +26,11 @@ class MyAdapter() :
         }
     }
 
+    fun clear() {
+        data.clear()
+    }
 
     fun addItems(newItem: List<String>) {
-
         data.addAll(newItem)
         notifyDataSetChanged()
     }
